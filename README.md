@@ -94,6 +94,14 @@ geotag文件夹下为带有地理坐标数据的CSV文件（共约4600万条数�
 
 test_facepp_api.py:检查API是否失效
 
+split_file.py:将大文件拆成小文件，每个文件10w张人脸
+
+format_face.py:将所有数据格式标准化从而可以导入数据库中
+
+import_to_database.py:将所有的人脸数据导入本地数据库中
+
+execute_sql.py:放在云端运行相应的SQL语句
+
 ### HCHO
 贾清源有关获取情绪数据、写入数据库的代码方法文件  
 emotion4.01.py
@@ -106,16 +114,13 @@ emotion4.02.py
 ## 1SiteRanking
 A Ranking of Tourist Attractions based on the Facial Expressions.
 ### Data Collection
+search_sites.html: 导入csv文件，包括景点的名称，返回景点的经纬度、类型、评分。 
 
-#### get_flickr_photos
+get_flickr_photos.py: 获取Flickr照片  
 
-##### get_flickr_photos.py
-用于获取Flickr照片
+get_photo_info.py: 获取Flickr照片的信息
 
-### Emotion Detection
-### Spatial Analysis
-
-
+DetectEmotion.py: 探测照片的情绪
 
 ## 2StockEmotion
 Mapping the Sensitivity of the Public Emotion to the Movement of Stock Market Value.
@@ -133,3 +138,15 @@ Mapping the Sensitivity of the Public Emotion to the Movement of Stock Market Va
 绘制NASDAQ、N225、FTSE100三个文件。
 - × [数据按照月份导出csv.ipynb](2StockEmotion/数据按照月份导出csv.ipynb):
 将数据按照自己要求导出的模板文件，可以按照自己的意愿将需要的数据导出为csv。(改进：函数化）
+
+## 3WorldEmotion
+#### GlobalEmotion.ipynb
+计算了世界不同人种之间的情绪差异
+#### pt_join_country.py
+将人脸数据与国家相关联
+#### datashader_plot.ipynb
+使用 datashader 来画数据量极大的点
+#### export_YFCCextended.zip
+快速导出成果表
+#### send_mail.py
+快速发送QQ邮件
